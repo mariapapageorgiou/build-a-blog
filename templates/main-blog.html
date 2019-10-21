@@ -6,6 +6,9 @@
     </header>
 
     {% if not new_blog %}
+    {% if blogs|length == 0 %}
+    <h3>No Posts Available</h3>
+    {% else %}
         <h2>Available Blog Posts!</h2>
         <ul>
         {% for blog in blogs %}
@@ -13,7 +16,7 @@
         <br>{{blog.body}}</li>
         {% endfor %}
         </ul>
-    {% endif %}
+    {% endif %} {% endif %}
     {% if new_blog %}
     <h2>{{new_blog.name}}</h2>
     <p>{{new_blog.body}}</p>
